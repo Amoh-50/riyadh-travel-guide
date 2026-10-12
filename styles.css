@@ -1,0 +1,452 @@
+/* styles.css
+   A4: Intro CSS Fill-in Template
+   Instructions: rename this file to styles.css and complete each TODO block.
+*/
+
+
+
+
+
+/* ===== Base styles (mostly done) ===== */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  color: #34312e;
+  background: #fffdf9;
+}
+
+a { color: inherit; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.container {
+  width: min(1000px, 92%);
+  margin: 0 auto;
+}
+
+/* ===== Header ===== */
+.site-header {
+  border-bottom: 1px solid #eee6dc;
+  background: #fffdf9;
+}
+
+.header-inner {
+  /* TODO A (Flexbox):
+     Make the brand appear on the left and the navigation on the right.
+     Requirements:
+       - Use flexbox
+       - Center items vertically
+       - Put space between left and right
+  */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 88px;
+}
+
+.brand {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.brand .dot {
+  /* TODO B (Color):
+     Make the dot a light blue accent color (choose a readable blue).
+  */
+  color: #65b7d1;
+}
+
+.site-nav a {
+  margin-left: 18px;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: #444;
+}
+
+
+
+
+
+
+/* ===== Hero ===== */
+.hero {
+  /* TODO C (Background image hero):
+     Turn this into a hero banner with a background image.
+     Requirements:
+       - Use a background image URL (use the one below)
+       - Make it cover the area and center it
+       - Add a light overlay so text is readable (hint: use a linear-gradient + image)
+       - Set a minimum height (e.g., 360px)
+  */
+  background-image: linear-gradient(rgba(18, 22, 25, 0.55), rgba(18, 22, 25, 0.69)), url("images/riyadh_skyline.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  /* My image:
+     https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1600&q=60
+  */
+}
+
+.hero-content {
+  /* TODO D (Center content):
+     Center the hero text horizontally.
+     Add vertical padding so it doesn't feel cramped.
+  */
+  text-align: center;
+  padding: 94px 18px 102px;
+  max-width: 790px;
+  color: #fff;
+}
+
+.hero h1 {
+  margin: 0;
+  /* TODO E (Typography):
+     Make the headline large and uppercase.
+     (e.g., font-size around 42–48px, text-transform uppercase)
+  */
+  font-size: clamp(36px, 5.1vw, 52px);
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  line-height: 1.15;
+  font-weight: 800;
+}
+
+.hero-subhead {
+  margin: 6px 0 22px;
+  /* TODO F (Typography):
+     Make this slightly smaller than h1 and a softer color.
+     (e.g., font-size ~20–24px; color #555)
+  */
+  font-size: clamp(18px, 2.25vw, 21px);
+  color: #f3efeb;
+  line-height: 1.7;
+}
+
+
+
+
+
+
+/* ===== Buttons ===== */
+.btn {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 3px;
+  font-size: 14px;
+}
+
+.btn-dark {
+  /* TODO G (Button styling):
+     Make this a dark filled button with white text.
+     (e.g., background #333; color #fff)
+  */
+  background: #57524b;
+  border: 2px solid #57524b;
+  color: #fff;
+  font-weight: 700;
+}
+
+.btn-outline {
+  /* TODO H (Button styling):
+     Make this an outlined button with a blue border and matching text.
+     (e.g., border: 2px solid ...; color: ...; background: transparent)
+  */
+  border: 2px solid #277c9b;
+  color: #277c9b;
+  background: transparent;
+  font-weight: 700;
+}
+
+/* ===== Features (3 columns) ===== */
+.features {
+  padding: 42px 0;
+}
+
+.features-grid {
+  /* TODO I (Layout):
+     Arrange the three feature blocks in a row (desktop).
+     Requirements:
+       - Use flexbox
+       - Add a gap between items (e.g., 26px)
+  */
+  display: flex;
+  gap: 26px;
+  align-items: stretch;
+}
+
+.feature {
+  /* TODO J (Sizing / alignment):
+     Make each feature take equal width and center its text.
+  */
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+}
+
+.icon {
+  width: 56px;
+  height: 56px;
+  border: 2px solid #dfc9a9;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 12px;
+  color: #625d58;
+  font-size: 22px;
+}
+
+/* ===== Featured content ===== */
+.featured {
+  padding: 42px 0 36px;
+  background: #faf4ea;
+}
+
+.section-title {
+  text-align: center;
+  margin: 0;
+  font-size: 18px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.section-lede {
+  text-align: center;
+  max-width: 680px;
+  margin: 10px auto 22px;
+  color: #625d58;
+  font-size: 13px;
+}
+
+.media {
+  background: #eaeaea;
+  border: 1px solid #ddd;
+  height: 260px;
+  display: grid;
+  place-items: center;
+}
+
+
+
+
+
+
+/* ===== Secondary content (2 cards) ===== */
+.secondary {
+  padding: 34px 0 44px;
+}
+
+.secondary-grid {
+  /* TODO K (Layout):
+     Put the two cards next to each other on desktop.
+     Requirements:
+       - Use flexbox
+       - Add a gap (e.g., 26px)
+  */
+  display: flex;
+  gap: 26px;
+  align-items: stretch;
+}
+
+.card {
+  /* TODO L (Card styling):
+     Give each card a border and make it take equal width.
+     (Hint: flex: 1; border: 1px solid #eee)
+  */
+  flex: 1;
+  min-width: 0;
+  border: 1px solid #e8e1d9;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.card-text {
+  padding: 18px;
+}
+
+.card-text h3 {
+  margin: 0 0 8px;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.card-text p {
+  margin: 0 0 14px;
+  color: #625d58;
+  font-size: 13px;
+}
+
+.card-image {
+  min-height: 160px;
+  /* TODO M (Image block):
+     Make the card image behave like a background image:
+       - cover
+       - centered
+  */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Optional images (already provided) */
+.img-a {
+  background-image: url("images/diriyah.jpg");
+}
+.img-b {
+  background-image: url("images/riyadh_skyline.jpg");
+}
+
+/* ===== CTA ===== */
+.cta {
+  background: #faf4ea;
+  padding: 42px 0;
+}
+
+.cta-inner {
+  /* TODO N (Center CTA):
+     Center the CTA text and button.
+  */
+  text-align: center;
+}
+
+
+
+
+
+/* ===== Footer ===== */
+.site-footer {
+  background: #fffdf9;
+  border-top: 1px solid #eee6dc;
+  padding: 24px 0;
+}
+
+.footer-inner {
+  /* TODO O (Footer layout):
+     Arrange footer-left on the left and footer link columns on the right.
+     Requirements:
+       - Use flexbox
+       - Add a gap (e.g., 24px)
+       - Space items out (left/right)
+  */
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.footer-left {
+  max-width: 360px;
+  color: #625d58;
+  font-size: 12px;
+}
+
+.footer-left a { color: #9b5f3d; }
+
+.footer-cols {
+  display: flex;
+  gap: 28px;
+}
+
+.footer-col h4 {
+  margin: 0 0 8px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.footer-col a {
+  display: block;
+  font-size: 12px;
+  color: #625d58;
+  margin: 6px 0;
+}
+
+
+/* ===== Extra refinements using the A3 Riyadh colors ===== */
+html { scroll-behavior: smooth; }
+
+:focus-visible { outline: 3px solid #277c9b; outline-offset: 3px; }
+
+.skip-link { position: absolute; left: 12px; top: -80px; z-index: 10; padding: 12px 18px; background: #fffdf9; color: #34312e; }
+.skip-link:focus { top: 12px; }
+
+.brand { color: #57524b; letter-spacing: -0.045em; white-space: nowrap; font-size: 24px; }
+.site-nav ul { display: flex; align-items: center; flex-wrap: wrap; gap: 10px 0; margin: 0; padding: 0; list-style: none; }
+.site-nav a { color: #57524b; font-weight: 700; transition: color 160ms ease; }
+.site-nav a:hover { color: #a66b3e; }
+
+.hero-label { margin: 0 0 17px; font-size: 12px; text-transform: uppercase; letter-spacing: .22em; font-weight: 700; color: #f2cb8b; }
+.hero-subhead { max-width: 690px; margin: 18px auto 30px; }
+.btn { border-radius: 5px; transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease, transform 160ms ease; }
+.btn:hover { text-decoration: none; transform: translateY(-2px); }
+.btn-dark { box-shadow: 0 8px 18px rgba(0,0,0,.18); }
+.btn-dark:hover { background: #3c3733; border-color: #3c3733; }
+.btn-outline:hover { color: #fff; background: #277c9b; }
+
+.features { padding: 68px 0 72px; }
+.features-grid { margin-top: 30px; }
+.feature { background: #fff; border: 1px solid #eae2d8; border-radius: 10px; padding: 28px 23px; box-shadow: 0 6px 24px rgba(87,82,75,.045); }
+.feature .icon { width: 72px; height: 72px; background: #faf4ea; }
+.feature .icon img { width: 40px; height: 40px; object-fit: contain; }
+.feature h3 { margin: 9px 0 12px; font-size: 18px; color: #57524b; }
+.feature p { margin: 0; font-size: 14px; line-height: 1.75; color: #625d58; }
+.section-title { color: #57524b; font-size: 22px; letter-spacing: .09em; }
+.section-lede { max-width: 780px; font-size: 14px; line-height: 1.8; margin-bottom: 28px; }
+.featured { padding: 68px 0; }
+.media { margin: 22px 0 0; height: 390px; display: block; border: 0; position: relative; overflow: hidden; border-radius: 9px; background: #eae0d4; box-shadow: 0 10px 30px rgba(44,37,31,.12); }
+.media img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+.media figcaption { position: absolute; bottom: 16px; left: 18px; padding: 8px 12px; background: rgba(25,25,25,.75); border-radius: 3px; color: white; font-size: 12px; letter-spacing: .02em; }
+
+.secondary { padding: 68px 0 74px; }
+.card { border-radius: 8px; overflow: hidden; background: #fffdf9; box-shadow: 0 6px 22px rgba(87,82,75,.055); }
+.card-text { padding: 25px 23px; }
+.card-text h3 { color: #57524b; font-size: 15px; }
+.card-text p { line-height: 1.7; font-size: 13px; }
+.card-image { min-height: 250px; }
+.cta { padding: 68px 0; border-top: 1px solid #efe3d3; }
+.cta-inner h2 { margin: 0 0 8px; font-size: 28px; text-transform: uppercase; letter-spacing: .06em; color: #57524b; }
+.cta-inner p { color: #625d58; margin: 0 0 24px; }
+.site-footer { padding: 40px 0; }
+.footer-name { font-size: 21px; color: #57524b; font-weight: 700; margin: 0 0 8px; }
+.footer-name .dot { color: #65b7d1; }
+.footer-left p { margin-top: 0; }
+.footer-col h4 { color: #57524b; }
+.footer-col a:hover { color: #9b5f3d; }
+
+@media (max-width: 900px) {
+  .header-inner { flex-direction: column; padding: 18px 0; gap: 16px; }
+  .site-nav ul { justify-content: center; }
+  .site-nav a { margin: 0 10px; }
+  .card { grid-template-columns: 1fr; }
+  .card-image { min-height: 175px; }
+}
+
+@media (max-width: 650px) {
+  .brand { font-size: 22px; }
+  .site-nav a { font-size: 10px; margin: 0 7px; }
+  .hero { min-height: 490px; }
+  .hero-content { padding: 76px 8px; }
+  .hero h1 { font-size: clamp(31px, 8vw, 42px); }
+  .hero-subhead { font-size: 17px; }
+  .features, .featured, .secondary { padding: 48px 0; }
+  .features-grid, .secondary-grid { flex-direction: column; gap: 18px; }
+  .feature { padding: 24px; }
+  .media { height: 260px; }
+  .card { grid-template-columns: 1fr; }
+  .card-image { min-height: 185px; }
+  .cta { padding: 52px 0; }
+  .footer-inner { flex-direction: column; }
+  .footer-cols { width: 100%; justify-content: space-between; gap: 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn { transition: none; }
+}
